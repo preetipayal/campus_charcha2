@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:campus_charcha/screens/home_screen.dart';
 import 'package:campus_charcha/utils/utils.dart';
 import 'package:campus_charcha/widgets/roundbutton.dart';
@@ -24,7 +26,7 @@ class _SignupScreenState extends State<SignupScreen> {
     emailController.dispose();
     passwordController.dispose();
   }
-  void SingnUp (BuildContext context){
+  void singnUp (BuildContext context){
     setState(() {
       loading=true;
     });
@@ -60,6 +62,9 @@ class _SignupScreenState extends State<SignupScreen> {
           fontWeight: FontWeight.bold
         ),),
         centerTitle: true,
+        leading: IconButton(onPressed: (){
+          Navigator.pop(context);
+        }, icon: Icon(Icons.arrow_back)),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -105,19 +110,12 @@ class _SignupScreenState extends State<SignupScreen> {
                 loading: loading,
                  ontap: (){
                     if(_formkey.currentState!.validate()){
-                    SingnUp(context);               
+                    singnUp(context);               
                  }
       
                 }
                   )
               ),
-          
-             
-          
-              
-          
-             
-          
             ],
           ),
         ),

@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:campus_charcha/screens/forgotpassword_screen.dart';
 import 'package:campus_charcha/screens/home_screen.dart';
 import 'package:campus_charcha/ui/auth/signup_screen.dart';
@@ -43,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
         setState(() {
           loading=false;
         });
-      }).onError((error,StackTrace){
+      }).onError((error,stackTrace){
         debugPrint(error.toString());
         Utils().toastMessage(error.toString());
         setState(() {

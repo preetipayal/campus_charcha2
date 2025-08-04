@@ -1,4 +1,6 @@
 
+// ignore_for_file: use_build_context_synchronously, deprecated_member_use
+
 import 'package:campus_charcha/screens/eventdetails.dart';
 import 'package:campus_charcha/screens/exam_screen.dart';
 import 'package:campus_charcha/screens/fests_screen.dart';

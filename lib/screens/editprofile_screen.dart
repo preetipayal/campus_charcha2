@@ -42,7 +42,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           children: [
             const CircleAvatar(
               radius: 50,
-              backgroundImage: AssetImage('assets/pofile.png'),
+              backgroundImage: AssetImage('assets/profile.png'),
             ),
             const SizedBox(height: 20),
             CustomTextField(keyboardType: TextInputType.text, controller: nameController, icon: Icons.person, labelText: 'Name', validatorText: 'please enter your name', obscuretext: false),
