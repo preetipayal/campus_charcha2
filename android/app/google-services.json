@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "337272009893",
+    "firebase_url": "https://campuscharcha-2-default-rtdb.firebaseio.com",
+    "project_id": "campuscharcha-2",
+    "storage_bucket": "campuscharcha-2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337272009893:android:9315e468a26ec6bff1494c",
+        "android_client_info": {
+          "package_name": "com.campus_charcha2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxHQzv-z3TFfqFaS0Ks98ODp9izDcDKMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337272009893:android:17dae413e0f9bb21f1494c",
+        "android_client_info": {
+          "package_name": "com.example.campus_charcha"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxHQzv-z3TFfqFaS0Ks98ODp9izDcDKMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:337272009893:android:f2c14120e0161425f1494c",
+        "android_client_info": {
+          "package_name": "com.example.fire_base"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBxHQzv-z3TFfqFaS0Ks98ODp9izDcDKMU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
