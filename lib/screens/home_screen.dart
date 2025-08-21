@@ -36,6 +36,7 @@ class _HomescreenState extends State<Homescreen> {
   AppBar _buildAppBar(){
     if(_currentIndex==0){
       return AppBar(
+automaticallyImplyLeading: false,
         backgroundColor:  const Color.fromARGB(255, 88, 175, 215),
         title: const Text(
           'Home',

@@ -17,16 +17,16 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
       case TargetPlatform.iOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for ios - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return ios;
       case TargetPlatform.macOS:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for macos - '
@@ -51,21 +51,20 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBxHQzv-z3TFfqFaS0Ks98ODp9izDcDKMU',
-    appId: '1:337272009893:android:f2c14120e0161425f1494c',
+    appId: '1:337272009893:android:fdfcebffdcf23b0bf1494c',
     messagingSenderId: '337272009893',
     projectId: 'campuscharcha-2',
     databaseURL: 'https://campuscharcha-2-default-rtdb.firebaseio.com',
     storageBucket: 'campuscharcha-2.firebasestorage.app',
   );
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBV8rz2cLQCXdeOaD4nVzic4auXNqzGLP0',
-    appId: '1:337272009893:web:61668e61dd43bfbff1494c',
+  static const FirebaseOptions ios = FirebaseOptions(
+    apiKey: 'AIzaSyDHXU3MlyCo0jIVV-JvDYCef4kk91MYUPU',
+    appId: '1:337272009893:ios:792ccb56a6ac2f5ff1494c',
     messagingSenderId: '337272009893',
     projectId: 'campuscharcha-2',
-    authDomain: 'campuscharcha-2.firebaseapp.com',
     databaseURL: 'https://campuscharcha-2-default-rtdb.firebaseio.com',
     storageBucket: 'campuscharcha-2.firebasestorage.app',
+    iosBundleId: 'com.campus.app',
   );
-
 }

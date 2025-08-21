@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.fire_base"
+    namespace = "com.campus.app"
     compileSdk = 35 // or the latest SDK you are using
     ndkVersion = "27.0.12077973" // 
 
@@ -23,7 +23,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.example.fire_base"
+        applicationId = "com.campus.app"
         minSdk = 23 
         targetSdk = 35
         versionCode = 1
