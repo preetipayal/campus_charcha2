@@ -133,7 +133,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ),
             
-                const Spacer(),
+                SizedBox(height:200),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

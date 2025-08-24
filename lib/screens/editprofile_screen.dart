@@ -4,16 +4,36 @@ import 'package:campus_charcha/widgets/textfield.dart';
 import 'package:flutter/material.dart';
 
 class EditProfileScreen extends StatefulWidget {
-  const EditProfileScreen({super.key});
+  final String name;
+  final String email;
+
+  const EditProfileScreen({
+    super.key,
+    required this.name,
+    required this.email,
+  });
 
   @override
   State<EditProfileScreen> createState() => _EditProfileScreenState();
 }
 
 class _EditProfileScreenState extends State<EditProfileScreen> {
-  final TextEditingController nameController = TextEditingController(text: 'Preeti');
-  final TextEditingController emailController = TextEditingController(text: 'preeti@college.edu');
-  final TextEditingController phoneController = TextEditingController(text: '+91 9876543210');
+  late TextEditingController nameController;
+  late TextEditingController emailController;
+
+  @override
+  void initState() {
+    super.initState();
+    nameController = TextEditingController(text: widget.name);
+    emailController = TextEditingController(text: widget.email);
+  }
+
+  @override
+  void dispose() {
+    nameController.dispose();
+    emailController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +41,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
       appBar: AppBar(
         backgroundColor: AppColors.accent,
         elevation: 0,
-        title: Text(
+        title: const Text(
           'Edit Profile',
           style: TextStyle(
             fontSize: 22,
@@ -30,11 +50,13 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
           ),
         ),
         centerTitle: true,
-         leading: IconButton(onPressed: (){
-          Navigator.pop(context);
-        }, icon:Icon(Icons.arrow_back),
-        color: Colors.white,
-        ) 
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: const Icon(Icons.arrow_back),
+          color: Colors.white,
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -45,19 +67,35 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
               backgroundImage: AssetImage('assets/profile.png'),
             ),
             const SizedBox(height: 20),
-            CustomTextField(keyboardType: TextInputType.text, controller: nameController, icon: Icons.person, labelText: 'Name', validatorText: 'please enter your name', obscuretext: false),
-             SizedBox(height: 16),
-            CustomTextField(keyboardType: TextInputType.text, controller: emailController, icon: Icons.email_outlined, labelText: 'Email address', validatorText: 'please enter your email', obscuretext: false),
-             SizedBox(height: 16),
-            CustomTextField(keyboardType: TextInputType.number, controller: phoneController, icon: Icons.phone_android_outlined, labelText: 'Phone Number', validatorText: 'please enter your Phone Number', obscuretext: false),
-             SizedBox(height: 16),
-            RoundButton(tittle: 'Save', ontap: (){}),
-             
-            
+            CustomTextField(
+              keyboardType: TextInputType.text,
+              controller: nameController,
+              icon: Icons.person,
+              labelText: 'Name',
+              validatorText: 'please enter your name',
+              obscuretext: false,
+            ),
+            const SizedBox(height: 16),
+            CustomTextField(
+              keyboardType: TextInputType.text,
+              controller: emailController,
+              icon: Icons.email_outlined,
+              labelText: 'Email address',
+              validatorText: 'please enter your email',
+              obscuretext: false,
+            ),
+            const SizedBox(height: 16),
+            RoundButton(
+              tittle: 'Save',
+              ontap: () {
+                // You can now access updated values:
+                print("Updated Name: ${nameController.text}");
+                print("Updated Email: ${emailController.text}");
+              },
+            ),
           ],
         ),
       ),
     );
   }
-
 }

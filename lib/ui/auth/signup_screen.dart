@@ -64,7 +64,7 @@ class _SignupScreenState extends State<SignupScreen> {
         centerTitle: true,
         leading: IconButton(onPressed: (){
           Navigator.pop(context);
-        }, icon: Icon(Icons.arrow_back)),
+        }, icon: Icon(Icons.arrow_back),color: Colors.white,),
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),

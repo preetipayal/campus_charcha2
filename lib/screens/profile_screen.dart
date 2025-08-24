@@ -2,12 +2,15 @@ import 'package:campus_charcha/screens/editprofile_screen.dart';
 import 'package:campus_charcha/widgets/appcolors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
+
   @override
   Widget build(BuildContext context) {
+    final user = FirebaseAuth.instance.currentUser;
     return Scaffold(
      
       appBar: AppBar(
@@ -39,7 +42,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             const SizedBox(height: 16),
             Text(
-              'Preeti ',
+              "Your Name Here", 
               style: GoogleFonts.poppins(
                 fontSize: 20,
                 fontWeight: FontWeight.w600,
@@ -47,14 +50,14 @@ class ProfileScreen extends StatelessWidget {
             ),
             const SizedBox(height: 4),
             Text(
-              'preeti@college.edu',
+              user?.email ?? 'No email',
               style: GoogleFonts.poppins(
                 fontSize: 14,
                 color: Colors.grey[600],
               ),
             ),
             const SizedBox(height: 30),
-            _profileTile(Icons.person, 'Edit Profile',(){Navigator.push(context, MaterialPageRoute(builder: (context)=>EditProfileScreen()));}),
+            _profileTile(Icons.person, 'Edit Profile',(){Navigator.push(context, MaterialPageRoute(builder: (context)=>EditProfileScreen(name: "Your Name Here",email: user?.email ?? '',)));}),
             // _profileTile(Icons.lock, 'Change Password',(){}),
             // _profileTile(Icons.notifications, 'Notification Settings',(){}),
             // _profileTile(Icons.help_outline, 'Help & Support',(){}),

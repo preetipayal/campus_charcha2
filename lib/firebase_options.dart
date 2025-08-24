@@ -67,4 +67,5 @@ class DefaultFirebaseOptions {
     storageBucket: 'campuscharcha-2.firebasestorage.app',
     iosBundleId: 'com.campus.app',
   );
+
 }
